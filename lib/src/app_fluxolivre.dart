@@ -1,5 +1,5 @@
 import 'package:app_fluxolivrep/src/pages/admin_page.dart';
-
+import 'package:app_fluxolivrep/src/pages/user_page.dart';
 import 'package:app_fluxolivrep/src/pages/cad_usuario_page.dart';
 import 'package:app_fluxolivrep/src/pages/home_page.dart';
 import 'package:app_fluxolivrep/src/pages/login_page.dart';
@@ -24,10 +24,11 @@ class AppFluxolivre extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'AppFluxoLivre',
         routes: {
-          '/': (_) => LoginPage(),
+          '/': (_) => AdminPanel(),
           '/home': (_) => HomePage(),
           '/novousuario': (_) => CadUsuarioPage(),
-          '/admin': (_) => AdminPage(),
+          '/admin': (_) => LoginPage(),
+          '/users': (_) => const UserPage(),
         },
       ),
     );

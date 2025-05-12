@@ -1,6 +1,6 @@
-import 'package:app_fluxolivrep/src/pages/admin_page.dart';
 import 'package:flutter/material.dart';
+import 'package:app_fluxolivrep/src/app_fluxolivre.dart';
 
 void main() {
-  runApp(const AdminPage());
+  runApp(const AppFluxolivre());
 }

@@ -1,25 +1,9 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const AdminPage());
-}
-
-class AdminPage extends StatelessWidget {
-  const AdminPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: const AdminPanel(), // <- AQUI: renderiza AdminPanel como conteúdo principal
-    );
-  }
-}
-
 class AdminPanel extends StatelessWidget {
   const AdminPanel({super.key});
 
-  final List<Map<String, dynamic>> items = const [
+  static final List<Map<String, dynamic>> items = [
     {'title': 'Usuários', 'image': Icons.group},
     {'title': 'Relatório', 'image': Icons.assignment},
     {'title': 'Configurações', 'image': Icons.settings},
@@ -45,7 +29,11 @@ class AdminPanel extends StatelessWidget {
           ),
           itemCount: items.length,
           itemBuilder: (context, index) => InkWell(
-            onTap: () {},
+            onTap: () {
+              if (items[index]['title'] == 'Usuários') {
+                Navigator.pushNamed(context, '/users');
+              }
+            },
             child: Container(
               decoration: BoxDecoration(
                 color: Colors.grey[200],
